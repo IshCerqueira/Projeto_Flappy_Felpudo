@@ -5,16 +5,13 @@ using UnityEngine;
 public class ControlaJogadorMouseEsquerdo : MonoBehaviour {
 
     public bool comecou;
-    public int vida;
-    
-  
 
     Rigidbody2D corpoJogador;
   Vector2 forcaImpulso = new Vector2(0, 500f);
 
   void Start () { 
     corpoJogador = GetComponent<Rigidbody2D> ();
-        vida = 3;
+         
   }
   
   void Update () {
@@ -32,15 +29,7 @@ public class ControlaJogadorMouseEsquerdo : MonoBehaviour {
     
   }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Inimigo")
-        {
-            vida--;
-            Debug.Log(vida);
-        }
-
-    }
+   
 
 
 }

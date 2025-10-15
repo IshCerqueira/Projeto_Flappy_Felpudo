@@ -3,8 +3,12 @@ using System.Collections;
 
 public class GeradorInimigos : MonoBehaviour
 {
+
+   
+
     // Prefab do inimigo (arraste no Inspector)
     public GameObject inimigoPrefab;
+    public GameObject chefePrefab;
 
     // Intervalo entre spawns (segundos)
     public float intervalo = 3f;
@@ -56,4 +60,16 @@ public class GeradorInimigos : MonoBehaviour
             yield return null; // Espera o próximo frame
         }
     }
+
+    public void GerarChefe()
+    {
+
+        Vector2 posicaoAleatoria = new Vector2(13,0);
+
+        // Instancia o inimigo
+        GameObject chefe = Instantiate(chefePrefab, posicaoAleatoria, Quaternion.identity);
+
+
+    }
+
 }
