@@ -6,6 +6,9 @@ using UnityEngine;
 public class DanoProjetil : MonoBehaviour
 {
 
+    public AudioSource src;
+    public AudioClip hit;
+
     [SerializeField] private DadosDoJogador _dadosDoJogador;
     [SerializeField] private DadosdoChefe _dadosDoChefe;
   
@@ -13,12 +16,18 @@ public class DanoProjetil : MonoBehaviour
    
     private void Start()
     {
+        src = GameObject.Find("AudioSource").GetComponent<AudioSource>();
+
         _dadosDoChefe = GameObject.Find("BossData").GetComponent<DadosdoChefe>();
         _dadosDoJogador = GameObject.Find("Felpudo_Flying0001").GetComponent<DadosDoJogador>();
         
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+
+        src.clip = hit;
+        src.Play();
+
         if (other.gameObject.tag == "Inimigo")
         {
             _dadosDoJogador.AumentarScore();

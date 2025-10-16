@@ -13,6 +13,8 @@ public class DadosDoJogador : MonoBehaviour
     public int vidaDoJogador;
     public int score;
     public TextMeshProUGUI countText;
+    public AudioSource src;
+    public AudioClip takingDamage;
 
     [SerializeField] private Image[] barraDeVida;
 
@@ -57,6 +59,10 @@ public class DadosDoJogador : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+
+        src.clip = takingDamage;
+        src.Play();
+
         if (other.gameObject.tag == "Inimigo")
         {
             vidaDoJogador--;

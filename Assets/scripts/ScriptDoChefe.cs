@@ -13,18 +13,26 @@ public class ScriptDoChefe : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public float limiteDestruicaoX = -12f;
     public float intervalo = 1.5f;
+    public AudioSource src;
+    public AudioClip die, entrance;
+
 
     [SerializeField] private DadosdoChefe _dadosDoChefe;
-   
  
 
     // Start is called before the first frame update
     void Start()
     {
-       spriteRenderer = GetComponent<SpriteRenderer>();
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        src = GameObject.Find("AudioSource2").GetComponent<AudioSource>();
 
         _dadosDoChefe = GameObject.Find("BossData").GetComponent<DadosdoChefe>();
         _dadosDoChefe.toogleExistindo();
+
+        src.clip = entrance;
+        src.Play();
 
         InvokeRepeating("Atirar", 0f, intervalo);
 
@@ -64,6 +72,9 @@ public class ScriptDoChefe : MonoBehaviour
 
             if (_dadosDoChefe.vidaChefe == 0)
             {
+                src.clip = die;
+                src.Play();
+
                 _dadosDoChefe.velocidade = 0;
 
                 Vector3 posicao = new Vector3(chefe.position.x, chefe.position.y, -0.5f);
@@ -98,6 +109,10 @@ public class ScriptDoChefe : MonoBehaviour
                  
             if (_dadosDoChefe.vidaChefe == 0)
             {
+
+                src.clip = die;
+                src.Play();
+
                 _dadosDoChefe.velocidade = 0;
 
                 Vector3 posicao = new Vector3(chefe.position.x, chefe.position.y, -0.5f);

@@ -126,6 +126,10 @@ MonoBehaviour:
   newColor: {r: 1, g: 0, b: 0, a: 1}
   spriteRenderer: {fileID: 0}
   limiteDestruicaoX: -12
+  intervalo: 1.5
+  src: {fileID: 4971538660992278357, guid: 76f68c5d2c077554181a3f851ae4c5d1, type: 3}
+  die: {fileID: 8300000, guid: 1f04628d20a19d249a1cba863005442a, type: 3}
+  entrance: {fileID: 8300000, guid: e0e1e0552c7173a4c9912a79481bc482, type: 3}
   _dadosDoChefe: {fileID: 0}
 --- !u!61 &7799735526466882620
 BoxCollider2D:
