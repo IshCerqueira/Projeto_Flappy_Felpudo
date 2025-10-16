@@ -7,6 +7,7 @@ TagManager:
   - Inimigo
   - projetil
   - KillBox
+  - Chefe
   layers:
   - Default
   - TransparentFX

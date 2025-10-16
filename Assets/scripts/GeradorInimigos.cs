@@ -10,37 +10,51 @@ public class GeradorInimigos : MonoBehaviour
     public GameObject inimigoPrefab;
     public GameObject chefePrefab;
 
+    [SerializeField] private DadosdoChefe _dadosDoChefe;
+
+
     // Intervalo entre spawns (segundos)
-    public float intervalo = 3f;
+    public float intervalo = 1.5f;
 
     // Limites de spawn no cenário
     public float limiteX = 8f;
     public float limiteY = 4f;
 
     // Velocidade de movimento dos inimigos
-    public float velocidade = 3f;
+    public float velocidade = 10f;
 
     // Limite X para destruir o inimigo ao sair da tela
     public float limiteDestruicaoX = -12f;
 
     void Start()
     {
+        velocidade = 10f;
+        _dadosDoChefe = GameObject.Find("BossData").GetComponent<DadosdoChefe>();
+       
         // Começa a gerar inimigos repetidamente
         InvokeRepeating("GerarInimigo", 0f, intervalo);
     }
 
     void GerarInimigo()
     {
-        // Define posição de spawn (à direita da tela)
-        float x = limiteX;
-        float y = Random.Range(-limiteY, limiteY);
-        Vector2 posicaoAleatoria = new Vector2(x, y);
+       if (_dadosDoChefe.existindo == false)
+        {
+            // Define posição de spawn (à direita da tela)
+            float x = limiteX;
+            float y = Random.Range(-limiteY, limiteY);
+            Vector2 posicaoAleatoria = new Vector2(x, y);
 
-        // Instancia o inimigo
-        GameObject inimigo = Instantiate(inimigoPrefab, posicaoAleatoria, Quaternion.identity);
+            // Instancia o inimigo
+            GameObject inimigo = Instantiate(inimigoPrefab, posicaoAleatoria, Quaternion.identity);
 
-        // Inicia o movimento automático (corrotina)
-        StartCoroutine(MoverInimigo(inimigo));
+            // Inicia o movimento automático (corrotina)
+            StartCoroutine(MoverInimigo(inimigo));
+        }
+
+        else
+        {
+            
+        }
     }
 
     IEnumerator MoverInimigo(GameObject inimigo)

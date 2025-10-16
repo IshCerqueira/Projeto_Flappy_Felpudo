@@ -17,4 +17,8 @@ public class RedirecionaACenaPrincipal : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+    public void OnStartClick3()
+    {
+        SceneManager.LoadScene("WinScene");
+    }
 }

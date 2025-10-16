@@ -13,7 +13,7 @@ public class AtaqueJogador : MonoBehaviour
 
 
     // Velocidade de movimento dos tiros
-    public float velocidade = 5f;
+    public float velocidade = 0;
 
     // Limite X para destruir o inimigo ao sair da tela
     public float limiteDestruicaoX;
@@ -21,7 +21,7 @@ public class AtaqueJogador : MonoBehaviour
     private void Start()
     {
         disparandoAgora = false;
-        velocidade = 10f;
+        velocidade = 15f;
     }
 
 
