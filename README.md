@@ -1,6 +1,6 @@
 # Projeto Flappy Felpudo
 
-Esse é um jogo 2D desenvolvido na Unity Engine como projeto para prático para a disciplina de programação de jogos no curso de jogos digitais da Universidade do Estado da Bahia e tem por objetivo trabalhar a introdução a animação de sprite e particulas visuais na Unity Engine.
+Esse é um jogo 2D desenvolvido na Unity Engine como projeto prático para a disciplina de programação de jogos no curso de jogos digitais da Universidade do Estado da Bahia e tem por objetivo trabalhar a introdução a animação de sprite e particulas visuais na Unity Engine.
 
 <p align="center">
 <img src="https://media.discordapp.net/attachments/728094017383956541/1428492170775760960/image.png?ex=68f2b281&is=68f16101&hm=79f9bb9e8bac673a505b9803e6f332552012b82c87fd0fa564880b6223783e7d&=&format=webp&quality=lossless&width=688&height=321">
